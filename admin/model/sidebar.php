@@ -24,7 +24,7 @@
             <ul class="navbar-nav float-end">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./assets/images/users/<?= $user['avatar'] ?>" alt="user" class="rounded-circle" width="31">
+                        <img src="../img/<?= $user['avatar'] ?>" alt="user" class="rounded-circle" width="31">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="profile.php"><i class="ti-user m-r-5 m-l-5"></i>

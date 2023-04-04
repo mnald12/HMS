@@ -32,13 +32,13 @@
                     </div>
                     <?php unset($_SESSION['pwdmsg']); ?>
                 <?php endif ?>
-                <form class="form-horizontal form-material mx-2" method="post" action="backend/save_profile.php">
+                <form class="form-horizontal form-material mx-2" method="post" action="backend/save_profile.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-4 col-xlg-3 col-md-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="./assets/images/users/<?= $user['avatar'] ?>" class="img-fluid" />
-                                    <input type="file" class="form-control mt-1">
+                                    <img src="../img/<?= $user['avatar'] ?>" class="img-fluid" />
+                                    <input type="file" name="file1" class="form-control mt-1">
                                 </div>
                             </div>
                         </div>
