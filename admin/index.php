@@ -11,13 +11,30 @@
     <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <link href="./dist/css/style.min.css" rel="stylesheet">
+    <style>
+        body{
+            background: url(../img/carousel-1.1680538935.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .card{
+            background-color: rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+        }
+        label{
+            opacity: 1 !important;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid pt-5">
         <div class="row justify-content-center">
             <div class="col-lg-6 card mt-5">
                 <div class="card-body">
-                    <h2 style="text-align: center">HOTELBOOK</h2>
+                    <h2 style="text-align: center; color: white;">HOTELBOOK</h2>
+                    <h6 class="section-title text-center text-white text-uppercase mb-3">Luxury Living</h6>
                     <?php if(isset($_SESSION['login-message'])): ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <?= $_SESSION['login-message']; ?>
