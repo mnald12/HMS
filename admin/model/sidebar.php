@@ -15,7 +15,7 @@
                     <b>HOTELBOOK</b>
                 </span>
             </a>
-            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="#"><i
                     class="mdi mdi-menu"></i></a>
         </div>
         <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
@@ -54,7 +54,37 @@
                         <i class="mdi mdi-book"></i><span class="hide-menu">Booking</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="booked.php" aria-expanded="false">
+                        <i class="mdi mdi-book-variant"></i><span class="hide-menu">Booked</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="checkedin.php" aria-expanded="false">
+                        <i class="mdi mdi-bookmark-check"></i><span class="hide-menu">Checked In</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="checkedout.php" aria-expanded="false">
+                        <i class="mdi mdi-bookmark-remove"></i><span class="hide-menu">Checked Out</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="rejected.php" aria-expanded="false">
+                        <i class="mdi mdi-delete-empty"></i><span class="hide-menu">Rejected</span>
+                    </a>
+                </li>
                 <hr>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="rooms.php" aria-expanded="false">
+                        <i class="mdi mdi-hospital-building"></i><span class="hide-menu">Rooms</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="home.php" aria-expanded="false">
@@ -71,12 +101,6 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="services.php" aria-expanded="false">
                         <i class="mdi mdi-ticket-account"></i><span class="hide-menu">Services</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="rooms.php" aria-expanded="false">
-                        <i class="mdi mdi-hospital-building"></i><span class="hide-menu">Rooms</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

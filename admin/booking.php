@@ -1,3 +1,12 @@
+<?php
+    include 'backend/connection.php';
+    $bookings = [];
+    $bookingQuerry = "SELECT * FROM bookings Where status = 'Pending'  Order By id desc";
+    $bookingResults = $conn->query($bookingQuerry);
+    while($row = $bookingResults->fetch_assoc()){
+        $bookings[] = $row; 
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
@@ -15,7 +24,7 @@
                     <div class="col-6">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 d-flex align-items-center">
-                              <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
+                              <li class="breadcrumb-item"><a href="dashboard.php" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
                               <li class="breadcrumb-item active" aria-current="page">Booking</li>
                             </ol>
                           </nav>
@@ -24,11 +33,44 @@
                 </div>
             </div>
 
-            <!-- contents here -->
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><b>Name</b></th>
+                                        <th scope="col"><b>Room</b></th>
+                                        <th scope="col"><b>Check In</b></th>
+                                        <th scope="col"><b>Check Out</b></th>
+                                        <th scope="col"><b>Created</b></th>
+                                        <th scope="col"><b>Action</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach( $bookings as $row): ?>
+                                        <tr>
+                                            <td><?= $row['name'] ?></td>
+                                            <td><?= $row['room'] ?></td>
+                                            <td><?= $row['check_in'] ?></td>
+                                            <td><?= $row['check_out'] ?></td>
+                                            <td><?= $row['created'] ?></td>
+                                            <td>
+                                                <a href="viewer.php?id=<?= $row['id'] ?>"><span class="badge bg-success">view</span></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <?php include './model/footer.php' ?>
         </div>
     </div>
-    <?php include './model/scripts.php' ?>
+    <?php include './model/scripts.php' ?>\
 </body>
 </html>

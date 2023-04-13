@@ -41,7 +41,7 @@
                                 <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown"><?= $home['display_text1'] ?></h1>
                                 <a href="rooms.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                                <a href="booking.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
+                                <a href="booking.php#booking" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                             </div>
                         </div>
                     </div>
@@ -57,18 +57,24 @@
                         <p class="mb-4"><?= $about['text'] ?></p>
                         <div class="row g-3 pb-4">
                             <?php foreach( $rooms as $row): ?>
+                                <?php
+                                    $name = $row['name'];
+                                    $query = "SELECT * FROM room WHERE room_type = '$name' ";
+                                    $result = $conn->query($query);
+                                    $total = $result->num_rows;
+                                ?>
                                 <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="border rounded p-1">
                                         <div class="border rounded text-center p-4">
                                             <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                            <h2 class="mb-1" data-toggle="counter-up"><?= $row['rooms'] ?></h2>
+                                            <h2 class="mb-1" data-toggle="counter-up"><?= $total ?></h2>
                                             <p class="mb-0"><?= $row['name'] ?> Rooms</p>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-3">
@@ -97,7 +103,7 @@
                         <h1 class="text-white mb-4"><?= $home['display_text2'] ?></h1>
                         <p class="text-white mb-4"><?= $home['text'] ?></p>
                         <a href="rooms.php" class="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
-                        <a href="booking.php" class="btn btn-light py-md-3 px-md-5">Book A Room</a>
+                        <a href="booking.php#booking" class="btn btn-light py-md-3 px-md-5">Book A Room</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -153,7 +159,7 @@
                                     </div>
                                     <p class="text-body mb-3"><?= $row['text'] ?></p>
                                     <div class="d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="booking.php">Book Now</a>
+                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="booking.php#booking">Book Now</a>
                                     </div>
                                 </div>
                             </div>

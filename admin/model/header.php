@@ -10,6 +10,8 @@
 <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
 <link href="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
 <link href="./dist/css/style.min.css" rel="stylesheet">
+<link href="./dist/tables/datatables.css" rel="stylesheet">
+<link href="./dist/tables/datatables.min.css" rel="stylesheet">
 <?php
     session_start();
 ?>

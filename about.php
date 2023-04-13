@@ -50,18 +50,24 @@
                         <p class="mb-4"><?= $about['text'] ?></p>
                         <div class="row g-3 pb-4">
                             <?php foreach( $rooms as $row): ?>
+                                <?php
+                                    $name = $row['name'];
+                                    $query = "SELECT * FROM room WHERE room_type = '$name' ";
+                                    $result = $conn->query($query);
+                                    $total = $result->num_rows;
+                                ?>
                                 <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="border rounded p-1">
                                         <div class="border rounded text-center p-4">
                                             <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                            <h2 class="mb-1" data-toggle="counter-up"><?= $row['rooms'] ?></h2>
+                                            <h2 class="mb-1" data-toggle="counter-up"><?= $total ?></h2>
                                             <p class="mb-0"><?= $row['name'] ?> Rooms</p>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-3">

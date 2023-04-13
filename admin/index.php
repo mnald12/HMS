@@ -13,7 +13,7 @@
     <link href="./dist/css/style.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid pt-5">
         <div class="row justify-content-center">
             <div class="col-lg-6 card mt-5">
                 <div class="card-body">

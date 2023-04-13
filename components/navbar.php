@@ -31,13 +31,6 @@ $contacts = $contactsResult->fetch_assoc();
                         <p class="mb-0"><?= $contacts['number'] ?></p>
                     </div>
                 </div>
-                <div class="col-lg-5 px-5 text-end">
-                    <div class="d-inline-flex align-items-center py-2">
-                        <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
             </div>
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
                 <a href="index.html" class="navbar-brand d-block d-lg-none">
