@@ -14,9 +14,9 @@ $contacts = $contactsResult->fetch_assoc();
 </div>
 <div class="container-fluid bg-dark px-0">
     <div class="row gx-0">
-        <div class="col-lg-3 bg-dark d-none d-lg-block">
+        <div class="col-lg-3 bg-dark d-none d-lg-block" style="background-color: darkblue !important;">
             <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                <h1 class="m-0 text-primary text-uppercase"><?= $home['brand_name'] ?></h1>
+                <h1 style="color: white !important; text-shadow: 0 1px 2px white;" class="m-0 text-primary text-uppercase"><?= $home['brand_name'] ?></h1>
             </a>
         </div>
         <div class="col-lg-9">
@@ -41,14 +41,14 @@ $contacts = $contactsResult->fetch_assoc();
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="index.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'index' ? 'active' : '' ?>">Home</a>
-                        <a href="about.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'about' ? 'active' : '' ?>">About</a>
+                        <a href="index.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'index' ? 'active' : '' ?>" title="this is home">Home</a>
+                        <a href="about.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'about' ? 'active' : '' ?>" title="this is about">About</a>
                         <a href="services.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'services' ? 'active' : '' ?>">Services</a>
                         <a href="rooms.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'rooms' ? 'active' : '' ?>">Rooms</a>
                         <a href="booking.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'booking' ? 'active' : '' ?>">Booking</a>
                         <a href="contacts.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'contacts' ? 'active' : '' ?>">Contact</a>
                     </div>
-                    <a href="booking.php" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book A Room<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="booking.php" style="background-color: firebrick !important; border: none" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Book A Room<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </nav>
         </div>

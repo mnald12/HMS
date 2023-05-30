@@ -8,6 +8,43 @@
 <html dir="ltr" lang="en">
 <head>
     <?php include './model/header.php' ?>
+    <style>
+    .conts{
+        width: 190px;
+        position: relative;
+        height: auto;
+        overflow: visible;
+        transition: 0.75s;
+    }
+    .tip1{
+        display: none;
+        position: absolute;
+        right: -130px;
+        top: 0;
+        max-width: 220px;
+        height: auto;
+        padding: 10px;
+        background: darkblue;
+        color: white;
+        border-radius: 6px;
+        transition: 0.75s;
+        word-wrap: break-word !important;
+    }
+    .tip1::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: darkblue;
+        position: absolute;
+        left: -5px;
+        top: 13px;
+        transform: rotate(45deg);
+    }
+    .b1:hover ~ .tip1{
+        display: block;
+        transition: 0.75s;
+    }
+    </style>
 </head>
 <body>
     <?php include './model/loader.php' ?>
@@ -64,8 +101,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-success text-white">Update</button>
+                                <div class="col-sm-12 conts">
+                                    <button class="b1 btn btn-success text-white">Update</button>
+                                    <div class="tip1">When clicked, it will save all of your changes.</div>
                                 </div>
                             </div>
                         </div>

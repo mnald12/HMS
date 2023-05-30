@@ -10,11 +10,11 @@
     }
 
 ?>
-<div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s" style="background-color: darkblue !important;">
     <div class="container pb-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-4">
-                <div class="bg-primary rounded p-4">
+                <div style="background-color: firebrick;" class="rounded p-4">
                     <a href="index.html"><h1 class="text-white text-uppercase mb-3"><?= $home['brand_name'] ?></h1></a>
                     <p class="text-white mb-0">
                         Discover A Brand Luxurious Hotel, feel the nature, feel the realness
@@ -56,7 +56,7 @@
         </div>
     </div>
 </div>
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+<a style="background-color: firebrick;" href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

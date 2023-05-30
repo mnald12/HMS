@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +13,9 @@
 <link href="./dist/css/style.min.css" rel="stylesheet">
 <link href="./dist/tables/datatables.css" rel="stylesheet">
 <link href="./dist/tables/datatables.min.css" rel="stylesheet">
-<?php
-    session_start();
-?>
+<style>
+    .tooltip {
+        pointer-events: none !important;
+        z-index: 999;
+    }
+</style>

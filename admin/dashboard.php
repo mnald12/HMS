@@ -166,9 +166,6 @@
                     </div>
                 </div>
             </div>
-
-            
-
             <?php include './model/footer.php' ?>
         </div>
     </div>

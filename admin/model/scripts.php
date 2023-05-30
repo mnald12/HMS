@@ -10,8 +10,11 @@
 <script src="./dist/tables/datatables.js"></script>
 <script src="./dist/tables/datatables.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function(){
         $('#table').DataTable();
         $('.dataTables_length').addClass('bs-select');
+    });
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({ boundary: 'window' });   
     });
 </script>

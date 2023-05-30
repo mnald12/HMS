@@ -11,6 +11,75 @@
 <html dir="ltr" lang="en">
 <head>
     <?php include './model/header.php' ?>
+    <style>
+        table, .dataTables_wrapper{
+            overflow: visible !important; 
+        }
+        .conts{
+            position: relative;
+            height: auto;
+            overflow: visible;
+            transition: 0.75s;
+        }
+        .tipm{
+            display: none;
+            position: absolute;
+            left: -406px;
+            top: 0;
+            max-width: 400px;
+            height: auto;
+            padding: 10px;
+            background: darkblue;
+            color: white;
+            border-radius: 6px;
+            transition: 0.75s;
+            word-wrap: break-word !important;
+            z-index: 999;
+        }
+        .tipm::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: darkblue;
+            position: absolute;
+            right: -5px;
+            top: 16px;
+            transform: rotate(45deg);
+        }
+        .a1:hover ~ .tipm{
+            display: block;
+            transition: 0.75s;
+        }
+        .tipm2{
+            display: none;
+            position: absolute;
+            left: -325px;
+            top: 0;
+            max-width: 400px;
+            height: auto;
+            padding: 10px;
+            background: darkblue;
+            color: white;
+            border-radius: 6px;
+            transition: 0.75s;
+            word-wrap: break-word !important;
+            z-index: 999;
+        }
+        .tipm2::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: darkblue;
+            position: absolute;
+            right: -5px;
+            top: 16px;
+            transform: rotate(45deg);
+        }
+        .a2:hover ~ .tipm2{
+            display: block;
+            transition: 0.75s;
+        }
+    </style>
 </head>
 <body>
     <?php include './model/loader.php' ?>
@@ -56,9 +125,11 @@
                                             <td><?= $row['check_in'] ?></td>
                                             <td><?= $row['check_out'] ?></td>
                                             <td><?= $row['room_number'] ?></td>
-                                            <td>
-                                                <a href="backend/checkin.php?id=<?= $row['id'] ?>"><span class="badge bg-success">Check In</span></a>
-                                                <a title="delete" href="backend/delete.php?id=<?= $row['id'] ?>&loc=booked"><span class="badge bg-danger"><i class="mdi mdi-delete-forever"></i></span></a>
+                                            <td class="conts">
+                                                <a class="a1" href="backend/checkin.php?id=<?= $row['id'] ?>"><span class="badge bg-success">Check In</span></a>
+                                                <a class="a2" href="backend/delete.php?id=<?= $row['id'] ?>&loc=booked"><span class="badge bg-danger"><i class="mdi mdi-delete-forever"></i></span></a>
+                                                <div class="tipm">When clicked. This row will be moved in checked-in page and will be recognized as a checked-in individual.</div>
+                                                <div class="tipm2">When clicked. this will be deleted and will be removed in this list. once deleted it cannot be recovered</div>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

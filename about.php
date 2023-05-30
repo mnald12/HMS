@@ -67,7 +67,7 @@
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
+                        <a style="background-color: firebrick;" class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-3">

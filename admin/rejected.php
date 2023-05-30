@@ -11,6 +11,43 @@
 <html dir="ltr" lang="en">
 <head>
     <?php include './model/header.php' ?>
+    <style>
+        .conts{
+            position: relative;
+            height: auto;
+            overflow: visible;
+            transition: 0.75s;
+        }
+        .tipm{
+            display: none;
+            position: absolute;
+            left: -470px;
+            top: 0;
+            max-width: 460px;
+            height: auto;
+            padding: 10px;
+            background: darkblue;
+            color: white;
+            border-radius: 6px;
+            transition: 0.75s;
+            word-wrap: break-word !important;
+            z-index: 999;
+        }
+        .tipm::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: darkblue;
+            position: absolute;
+            right: -5px;
+            top: 16px;
+            transform: rotate(45deg);
+        }
+        .a1:hover ~ .tipm{
+            display: block;
+            transition: 0.75s;
+        }
+    </style>
 </head>
 <body>
     <?php include './model/loader.php' ?>
@@ -54,8 +91,9 @@
                                             <td><?= $row['room'] ?></td>
                                             <td><?= $row['check_in'] ?></td>
                                             <td><?= $row['check_out'] ?></td>
-                                            <td>
-                                                <a href="backend/delete.php?id=<?= $row['id'] ?>&loc=rejected"><span class="badge bg-danger">Delete</span></a>
+                                            <td class="conts">
+                                                <a class="a1" href="backend/delete.php?id=<?= $row['id'] ?>&loc=rejected"><span class="badge bg-danger">Delete</span></a>
+                                                <div class="tipm">When clicked. This row will be deleted and cannot be recovered</div>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

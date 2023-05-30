@@ -11,6 +11,71 @@
 <html dir="ltr" lang="en">
 <head>
     <?php include './model/header.php' ?>
+    <style>
+    .conts{
+        width: 190px;
+        position: relative;
+        height: auto;
+        overflow: visible;
+        transition: 0.75s;
+    }
+    .tip1{
+        display: none;
+        position: absolute;
+        left: -240px;
+        top: -5px;
+        max-width: 220px;
+        height: auto;
+        padding: 10px;
+        background: darkblue;
+        color: white;
+        border-radius: 6px;
+        transition: 0.75s;
+        word-wrap: break-word !important;
+    }
+    .tip1::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: darkblue;
+        position: absolute;
+        right: -5px;
+        top: 20px;
+        transform: rotate(45deg);
+    }
+    .b1:hover ~ .tip1{
+        display: block;
+        transition: 0.75s;
+    }
+    .tip2{
+        display: none;
+        position: absolute;
+        right: -240px;
+        top: -5px;
+        max-width: 220px;
+        height: auto;
+        padding: 10px;
+        background: darkblue;
+        color: white;
+        border-radius: 6px;
+        transition: 0.75s;
+        word-wrap: break-word !important;
+    }
+    .tip2::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: darkblue;
+        position: absolute;
+        left: -5px;
+        top: 20px;
+        transform: rotate(45deg);
+    }
+    .b2:hover ~ .tip2{
+        display: block;
+        transition: 0.75s;
+    }
+    </style>
 </head>
 <body>
     <?php include './model/loader.php' ?>
@@ -56,7 +121,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="col-md-12">Price</label>
-                                                    <input type="text" value="<?= $row['price'] ?>"
+                                                    <input type="number" value="<?= $row['price'] ?>"
                                                     class="form-control form-control-line" name="price">
                                                 </div>
                                             </div>
@@ -91,9 +156,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <button class="btn btn-success text-white">Update</button>
-                                                <a type="button" href="room.php?rname=<?= $row['name'] ?>" class="btn btn-primary text-white">View Rooms</a>
+                                            <div class="conts">
+                                                <button class="b1 btn btn-success text-white">Update</button>
+                                                <a type="button" href="room.php?rname=<?= $row['name'] ?>" class="b2 btn btn-primary text-white">View Rooms</a>
+                                                <div class="tip1">When clicked, it will save all of your changes.</div>
+                                                <div class="tip2">Allows you to view the list of rooms in <?= $row['name'] ?>.</div>
                                             </div>
                                         </div>
                                     </div>

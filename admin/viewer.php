@@ -21,6 +21,70 @@
 <html dir="ltr" lang="en">
 <head>
     <?php include './model/header.php' ?>
+    <style>
+        .conts{
+            position: relative;
+            height: auto;
+            overflow: visible;
+            transition: 0.75s;
+        }
+        .tipss{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: -130px;
+            max-width: 220px;
+            height: auto;
+            padding: 10px;
+            background: darkblue;
+            color: white;
+            border-radius: 6px;
+            transition: 0.75s;
+            word-wrap: break-word !important;
+        }
+        .tipss::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: darkblue;
+            position: absolute;
+            left: 20px;
+            bottom: -5px;
+            transform: rotate(45deg);
+        }
+        .b1:hover ~ .tipss{
+            display: block;
+            transition: 0.75s;
+        }
+        .tipss2{
+            display: none;
+            position: absolute;
+            left: 73px;
+            top: -195px;
+            max-width: 220px;
+            height: auto;
+            padding: 10px;
+            background: darkblue;
+            color: white;
+            border-radius: 6px;
+            transition: 0.75s;
+            word-wrap: break-word !important;
+        }
+        .tipss2::before{
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: darkblue;
+            position: absolute;
+            left: 20px;
+            bottom: -5px;
+            transform: rotate(45deg);
+        }
+        .b2:hover ~ .tipss2{
+            display: block;
+            transition: 0.75s;
+        }
+    </style>
 </head>
 <body>
     <?php include './model/loader.php' ?>
@@ -117,9 +181,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <button class="btn btn-danger text-white" data-bs-toggle="modal" data-bs-target="#reject">Reject</button>
-                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserve">Reserve</button>
+                                <div class="col-lg-12 conts">
+                                    <button class="b1 btn btn-danger text-white" data-bs-toggle="modal" data-bs-target="#reject">Reject</button>
+                                    <button class="b2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserve">Reserve</button>
+                                    <div class="tipss">Allows you to reject this booking and send a message why the reservation cannot be made</div>
+                                    <div class="tipss2">Allows you to choose a room for this individual and to immediately send a pre-written email informing them that they have made a reservation once you picked a room.</div>
                                 </div>
                             </div>
                         </div>
@@ -132,17 +198,15 @@
     </div>
     
     <div class="modal fade" id="reserve" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">
-                        Select a Room
-                    </h2>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header pb-0">
+                <h4><?= $bookings['name'] ?> wants to book this date <?= $bookings['check_in'] ?> - <?= $bookings['check_out'] ?> in <?= $bookings['room'] ?> rooms. Please choose a room bellow</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="col-lg-12">
-                        <div class="row gap-2 justify-content-center">
+                        <div class="row g-1 justify-content-center">
                             <?php foreach( $rooms as $row): ?>
                                 <?php
                                     $rn = $row['room_number'];
@@ -155,14 +219,14 @@
                                         }
                                     }
                                 ?>
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <form action="backend/reserve.php" method="post" style="width: 100%; position: relative">
                                         <input type="text" name="id" value="<?= $id ?>" hidden>
                                         <input type="text" name="name" value="<?= $bookings['name'] ?>" hidden>
                                         <input type="text" name="email" value="<?= $bookings['email'] ?>" hidden>
                                         <input type="text" name="room" value="<?= $row['room_number'] ?>" hidden>
-                                        <button class="btn btn-primary" style="width: 100%; position: relative">
-                                            <p class="fs-5">Room <?= $row['room_number'] ?></p>
+                                        <button class="btn btn-primary" style="width: 100%; position: relative" <?= '' ?>>
+                                            <p class="fs-5">Room #<?= $row['room_number'] ?></p>
                                             <hr>
                                             <p class="fs-7"><?= count($schedules) === 0 ? "No Schedule" : "" ?></p>
                                             <?php foreach( $schedules as $rows): ?>
@@ -193,7 +257,7 @@
                         <input type="text" name="id" value="<?= $bookings['id'] ?>" hidden>
                         <input type="text" name="name" value="<?= $bookings['name'] ?>" hidden>
                         <input type="text" name="email" value="<?= $bookings['email'] ?>" hidden>
-                        <textarea name="msg" id="" class="form-control border-2" required></textarea>
+                        <textarea name="msg" id="" class="form-control border-2" required>Sorry <?= $bookings['name'] ?>, The date you choose are already been booked.</textarea>
                         <br>
                         <button class="btn btn-danger text-white">Reject and send message</button>
                     </form>

@@ -89,6 +89,8 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                                <h2>Change Password</h2>
+                                <br>
                                 <form class="form-horizontal form-material mx-2" method="post" action="backend/save_password.php">
                                     <div class="form-group">
                                         <label class="col-md-12">Password</label>
@@ -104,7 +106,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-success text-white">Change Password</button>
+                                            <button data-toggle="tooltip" title="Change the password" class="btn btn-success text-white">Change Password</button>
                                         </div>
                                     </div>
                                 </form>

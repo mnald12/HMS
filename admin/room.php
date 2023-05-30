@@ -67,7 +67,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title" id="exampleModalLabel">
-                        Room <?= nl2br($row['room_number']) ?> Schedule
+                        Room #<?= nl2br($row['room_number']) ?>  Schedule
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -86,13 +86,6 @@
                             <p><b><?= $scheds['check_in'] ?> - <?= $scheds['check_out'] ?></b></p>
                         <?php endforeach ?>
                     </div>
-                    <!-- <div class="modal-footer">
-                        <select class="form-select" name="" id="">
-                            <option class="bg-success" value="">Available</option>
-                            <option class="bg-danger" value="">Not Available</option>
-                        </select>
-                        <button class="btn btn-primary">Change Status</button>
-                    </div> -->
                 </div>
             </div>
         </div>

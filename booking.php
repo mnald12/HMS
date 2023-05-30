@@ -69,25 +69,25 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating date" id="date3" data-target-input="nearest">
-                                            <input type="text" name="checkin" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                            <input type="text" name="checkin" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" required />
                                             <label for="checkin">Check In</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating date" id="date4" data-target-input="nearest">
-                                            <input type="text" name="checkout" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                            <input type="text" name="checkout" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" required />
                                             <label for="checkout">Check Out</label>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@
                                               <option value="<?= $row['name'] ?>"><?= $row['name'] ?></option>
                                               <?php endforeach ?>
                                             </select>
-                                            <label for="select3">Select A Room</label>
+                                            <label for="select3">Select Room Type</label>
                                           </div>
                                     </div>
                                     <div class="col-12">
@@ -129,7 +129,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                        <button style="background-color: firebrick;" class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
                                     </div>
                                 </div>
                             </form>
@@ -139,5 +139,6 @@
             </div>
         </div>
     <?php include 'components/footer.php' ?>
+    <script></script>
 </body>
 </html>

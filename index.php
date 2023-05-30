@@ -40,7 +40,7 @@
                             <div class="p-3" style="max-width: 700px;">
                                 <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown"><?= $home['display_text1'] ?></h1>
-                                <a href="rooms.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
+                                <a href="rooms.php" style="background: firebrick !important; color: white;" class="btn py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
                                 <a href="booking.php#booking" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                 </div>
                             <?php endforeach ?>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
+                        <a style="background-color: firebrick;" class="btn btn-primary py-3 px-5 mt-2" href="booking.php#booking">Book a Room</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-3">
@@ -97,12 +97,12 @@
         </div>
         <div class="container-xxl py-5 px-0 wow zoomIn" data-wow-delay="0.1s">
             <div class="row g-0">
-                <div class="col-md-6 bg-dark d-flex align-items-center">
+                <div class="col-md-6 bg-dark d-flex align-items-center" style="background-color: darkblue !important;">
                     <div class="p-5">
                         <h6 class="section-title text-start text-white text-uppercase mb-3">Luxury Living</h6>
                         <h1 class="text-white mb-4"><?= $home['display_text2'] ?></h1>
                         <p class="text-white mb-4"><?= $home['text'] ?></p>
-                        <a href="rooms.php" class="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
+                        <a style="background-color: firebrick;" href="rooms.php" class="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
                         <a href="booking.php#booking" class="btn btn-light py-md-3 px-md-5">Book A Room</a>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                                     </div>
                                     <p class="text-body mb-3"><?= $row['text'] ?></p>
                                     <div class="d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="booking.php#booking">Book Now</a>
+                                        <a style="background-color: firebrick;" class="btn btn-sm btn-dark rounded py-2 px-4" href="booking.php#booking">Book Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button style="background-color: firebrick;" class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                     </div>
                                 </div>
                             </form>
