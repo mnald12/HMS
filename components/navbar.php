@@ -41,8 +41,8 @@ $contacts = $contactsResult->fetch_assoc();
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="index.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'index' ? 'active' : '' ?>" title="this is home">Home</a>
-                        <a href="about.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'about' ? 'active' : '' ?>" title="this is about">About</a>
+                        <a href="index.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'index' ? 'active' : '' ?>">Home</a>
+                        <a href="about.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'about' ? 'active' : '' ?>">About</a>
                         <a href="services.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'services' ? 'active' : '' ?>">Services</a>
                         <a href="rooms.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'rooms' ? 'active' : '' ?>">Rooms</a>
                         <a href="booking.php" class="nav-item nav-link <?= $_SESSION['nav-active'] == 'booking' ? 'active' : '' ?>">Booking</a>
