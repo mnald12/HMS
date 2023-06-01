@@ -159,7 +159,7 @@
                                     </div>
                                     <p class="text-body mb-3"><?= $row['text'] ?></p>
                                     <div class="d-flex justify-content-between">
-                                        <a style="background-color: firebrick;" class="btn btn-sm btn-dark rounded py-2 px-4" href="booking.php#booking">Book Now</a>
+                                    <a style="background-color: firebrick;" class="btn btn-sm btn-dark rounded py-2 px-4" href="booking2.php?rt=<?= $row['name'] ?>">Book Now</a>
                                     </div>
                                 </div>
                             </div>
